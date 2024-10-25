@@ -1,7 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HelpingComponent } from './modules/template/pages/helping/helping.component';
+import { MainpageComponent } from './modules/template/pages/mainpage/mainpage.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+
+  {
+    path: 'template',
+    loadChildren: () => import('./modules/template/template.module').then(m => m.TemplateModule)
+  },
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -3,20 +3,30 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WandkinavbarComponent } from './wandkinavbar/wandkinavbar.component';
-import { WandkifooterComponent } from './wandkifooter/wandkifooter.component';
+import { WandkinavbarComponent } from './sharemodules/navbar/wandkinavbar/wandkinavbar.component';
+import { WandkifooterComponent } from './sharemodules/footer/wandkifooter/wandkifooter.component';
+import { HelpingComponent } from './modules/template/pages/helping/helping.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { share } from 'rxjs';
+import { SharemodulesModule } from './sharemodules/sharemodules.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WandkinavbarComponent,
-    WandkifooterComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharemodulesModule
+
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
