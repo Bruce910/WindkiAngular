@@ -13,7 +13,7 @@ const routes: Routes = [
 ];
 @NgModule({
   declarations: [
-    SignupComponent,
+    SignupComponent
   ],
   imports: [
     RouterModule.forChild(routes),

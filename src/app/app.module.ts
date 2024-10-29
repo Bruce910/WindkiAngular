@@ -14,7 +14,7 @@ import { SharemodulesModule } from './sharemodules/sharemodules.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
