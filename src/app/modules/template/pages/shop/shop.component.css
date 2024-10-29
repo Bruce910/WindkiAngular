@@ -25,3 +25,44 @@
   color: #005f99;
   border-bottom: 2px solid #005f99;
 }
+
+.mt-5 {
+  margin-top: 3rem; /* 增加上方間距，避免與頁首重疊 */
+}
+
+.carousel-container {
+  width: 66.67%; /* 設置寬度為視窗的約 2/3 */
+  position: relative;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5%; /* 設置控制按鈕容器的寬度 */
+}
+
+.carousel-control-prev {
+  left: 0;
+}
+
+.carousel-control-next {
+  right: 0;
+}
+
+.carousel-inner-container {
+  width: 80%; /* 設置輪播圖片容器的寬度 */
+}
+
+.search-bar-container {
+  width: 30%; /* 設置寬度為頁面的 30% */
+}
+
+.search-bar-container .form-control {
+  width: 100%; /* 確保輸入框佔滿容器寬度 */
+}
+
+.search-bar-container .btn {
+  right: 0; /* 將按鈕定位在輸入框的右側 */
+}
