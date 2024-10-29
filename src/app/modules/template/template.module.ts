@@ -24,7 +24,8 @@ const routes: Routes = [
   { path: 'h1', component: DetailComponent },
   { path: 'helping', component: HelpingComponent },
   { path: 'mainpage', component: MainpageComponent},
-  { path: 'social', loadChildren: () => import('./pages/Social/social/social.module').then(m => m.SocialModule) }
+  { path: 'social', loadChildren: () => import('./pages/Social/social/social.module').then(m => m.SocialModule) },
+  { path: 'signup', loadChildren: () => import('./pages/signup/signup.module').then(m => m.SignupModule) }
 ];
 
 @NgModule({
