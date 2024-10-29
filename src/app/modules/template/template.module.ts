@@ -6,13 +6,15 @@ import { DetailComponent } from './pages/detail/detail.component';
 import { MainpageComponent } from './pages/mainpage/mainpage.component';
 import { SharemodulesModule } from 'src/app/sharemodules/sharemodules.module';
 import { HelpingComponent } from './pages/helping/helping.component';
+import { ShopComponent } from './pages/shop/shop.component';
 
 
 const routes: Routes = [
   { path: '', component: IndexComponent },
   { path: 'h1', component: DetailComponent },
   { path: 'helping', component: HelpingComponent },
-  { path: 'mainpage', component: MainpageComponent}
+  { path: 'mainpage', component: MainpageComponent},
+  {path: 'shop', component: ShopComponent}
 
 ];
 
@@ -22,7 +24,8 @@ const routes: Routes = [
     DetailComponent,
     IndexComponent,
     MainpageComponent,
-    HelpingComponent
+    HelpingComponent,
+    ShopComponent
   ],
   imports: [
     RouterModule.forChild(routes),
