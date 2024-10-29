@@ -14,7 +14,7 @@ import { forkJoin } from 'rxjs';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css'],
+  styleUrls: ['./main.component.scss'],
   providers: [FinancialService]
 })
 

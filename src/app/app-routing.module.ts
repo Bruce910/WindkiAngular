@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HelpingComponent } from './modules/template/pages/helping/helping.component';
 import { MainpageComponent } from './sharemodules/mainpage/mainpage.component';
 import { ShopComponent } from './modules/shop/pages/main/shop.component'; './modules/template/pages/Social/social/index/social.component'
-import { SocialComponent } from '../app/modules/social/pages/index/social.component'
+
 const routes: Routes = [
   // {
   //   path: 'template',
@@ -20,6 +20,11 @@ const routes: Routes = [
     path: 'shop',
     loadChildren: () => import('./modules/shop/shop.module').then(m => m.ShopModule)
   },
+  {
+    path: 'social',
+    loadChildren: () => import('./modules/social/social.module').then(m => m.SocialModule)
+  },
+
 
 
 ];
