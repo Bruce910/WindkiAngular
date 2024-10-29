@@ -1,0 +1,175 @@
+<app-wandkinavbar></app-wandkinavbar>
+<br>
+<br>
+<br>
+<br>
+<div class="layout-container">
+  <!-- Left Sidebar -->
+  <div class="left-sidebar">
+    <ul class="sidebar-menu">
+      <li *ngFor="let item of menuItems; let i = index"
+          [class.active]="item.active"
+          (click)="selectMenuItem(i)">
+        <i [class]="item.icon"></i>
+        <span>{{item.label}}</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Create Post Card -->
+    <div class="create-post-card">
+      <h2 class="create-post-title">發表文章</h2>
+
+      <div class="create-post-input">
+        <div class="avatar-placeholder"></div>
+        <input type="text"
+               class="post-input"
+               [(ngModel)]="newPostContent"
+               placeholder="Write something here...">
+      </div>
+
+      <div class="post-action-buttons">
+        <button class="action-button">
+          <i class="pi pi-camera"></i>
+          Photo/Video
+        </button>
+        <button class="action-button">
+          <i class="pi pi-user"></i>
+          Tag Friend
+        </button>
+        <button class="action-button">
+          <i class="pi pi-heart"></i>
+          Feeling/Activity
+        </button>
+        <button class="action-button">
+          <i class="pi pi-ellipsis-h"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Posts Feed -->
+    <div class="post-card" *ngFor="let post of posts">
+      <!-- Post Header -->
+      <div class="post-header">
+        <div class="user-info">
+          <div class="avatar-circle"></div>
+          <div class="user-details">
+            <span class="username">{{post.userName}}</span>
+
+            <div class="post-time">{{post.timePosted}}</div>
+          </div>
+        </div>
+        <button class="more-options">•••</button>
+      </div>
+
+      <!-- Post Content -->
+      <div class="post-content">
+        <p>{{post.content}}</p>
+        <div class="image-grid" *ngIf="post.images?.length">
+          <img *ngFor="let image of post.images" [src]="image" class="post-image">
+        </div>
+      </div>
+
+      <!-- Post Actions -->
+      <div class="post-actions">
+        <button class="action-btn like-btn" (click)="likePost(post)">
+          <i class="pi pi-heart" [class.liked]="post.isLiked"></i>
+          <span>{{post.likes}}</span>
+        </button>
+
+        <button class="action-btn comment-btn">
+          <i class="pi pi-comments"></i>
+          <span>{{post.comments}}</span>
+        </button>
+
+        <button class="action-btn share-btn">
+          <i class="pi pi-share-alt"></i>
+          <span>分享</span>
+        </button>
+      </div>
+
+      <!-- Comments Section -->
+      <div class="comments-section">
+        <div class="comment-input">
+          <div class="avatar-circle"></div>
+          <input type="text"
+                 placeholder="Write a comment..."
+                 [(ngModel)]="post.newComment"
+                 (keyup.enter)="addComment(post)">
+        </div>
+
+        <div class="comment" *ngFor="let comment of post.commentList">
+          <div class="avatar-placeholder"></div>
+          <div class="comment-content">
+            <div class="comment-user">{{comment.userName}}</div>
+            <div class="comment-text">{{comment.text}}</div>
+            <div class="comment-actions">
+              <span>Like</span>
+              <span>Reply</span>
+              <span>{{comment.time}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 在 main-content 後添加右側欄 -->
+  <div class="right-sidebar">
+    <div class="financial-data">
+      <div *ngIf="isLoading" class="loading">
+        載入中...
+      </div>
+
+      <div *ngIf="error" class="error">
+        {{error}}
+      </div>
+
+      <ng-container *ngIf="!isLoading && !error">
+        <!-- 股市資訊部分 -->
+        <div class="stock-ticker">
+          <h3>市場動態</h3>
+          <div class="stock-list">
+            <div *ngFor="let stock of stockData" class="stock-item">
+              <div class="stock-info">
+                <span class="stock-symbol">{{stock.symbol}}</span>
+                <span class="stock-name">{{stock.shortName || ''}}</span>
+              </div>
+              <div class="stock-price"
+                   [ngClass]="{'up': stock.regularMarketChange && stock.regularMarketChange > 0, 'down': stock.regularMarketChange && stock.regularMarketChange < 0}">
+                <span class="current-price">{{stock.regularMarketPrice || 0 | number:'1.2-2'}}</span>
+                <span class="price-change">
+                  {{formatPriceChange(stock.regularMarketChange || 0)}}
+                  ({{stock.regularMarketChangePercent || 0 | number:'1.2-2'}}%)
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 新聞部分 -->
+        <div class="news-section">
+          <h3>財經新聞</h3>
+          <div class="news-list">
+            <div *ngFor="let news of newsData" class="news-item">
+              <div class="news-image" *ngIf="news.thumbnail && news.thumbnail.resolutions.length">
+                <img [src]="news.thumbnail.resolutions[0].url" [alt]="news.title">
+              </div>
+              <div class="news-content">
+                <h4 class="news-title">
+                  <a [href]="news.link" target="_blank">{{news.title}}</a>
+                </h4>
+                <div class="news-meta">
+                  <span class="news-publisher">{{news.publisher}}</span>
+                  <span class="news-time">{{formatDate(news.providerPublishTime || 0)}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
