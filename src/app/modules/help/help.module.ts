@@ -4,6 +4,8 @@ import { SharemodulesModule } from 'src/app/sharemodules/sharemodules.module';
 import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { MainComponent } from './pages/main/main.component';
 import { DetailComponent } from './pages/detail/detail.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -17,6 +19,8 @@ const routes: Routes = [
     DetailComponent
   ],
   imports: [
+    CommonModule,
+    FormsModule,
     RouterModule.forChild(routes),
     SharemodulesModule,
     [NgbPaginationModule, NgbAlertModule]

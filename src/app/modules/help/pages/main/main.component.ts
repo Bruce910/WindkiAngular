@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class MainComponent {
 
+
+  id: string = '測試1';
+
 }

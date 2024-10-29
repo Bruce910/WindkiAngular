@@ -1,6 +1,7 @@
+import { FinancialService } from '../services/financial.service';
 import { Component, OnInit } from '@angular/core';
 import { Post, MenuItem } from '../../interfaces/post.interface';
-import { FinancialService } from '../../services/financial.service';
+
 import { NewsItem, StockItem } from '../../interfaces/financial.interface';
 import { HttpErrorResponse } from '@angular/common/http';
 import { forkJoin } from 'rxjs';
@@ -11,13 +12,13 @@ import { forkJoin } from 'rxjs';
  * @implements {OnInit}
  */
 @Component({
-  selector: 'app-social',
-  templateUrl: './social.component.html',
-  styleUrls: ['./social.component.scss'],
+  selector: 'app-main',
+  templateUrl: './main.component.html',
+  styleUrls: ['./main.component.css'],
   providers: [FinancialService]
 })
 
-export class SocialComponent implements OnInit {
+export class MainComponent implements OnInit {
   defaultAvatar = 'assets/images/default-avatar.png'; // 預設頭像
   /** 儲存所有貼文的陣列 */
   posts: Post[] = [];
