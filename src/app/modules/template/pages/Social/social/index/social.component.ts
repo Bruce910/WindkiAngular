@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Post, MenuItem } from '../interfaces/post.interface';
-import { FinancialService } from '../../../services/financial.service';
-import { NewsItem, StockItem } from '../interfaces/financial.interface';
+import { Post, MenuItem } from '../../interfaces/post.interface';
+import { FinancialService } from '../../services/financial.service';
+import { NewsItem, StockItem } from '../../interfaces/financial.interface';
 import { HttpErrorResponse } from '@angular/common/http';
 import { forkJoin } from 'rxjs';
 
@@ -68,6 +68,26 @@ export class SocialComponent implements OnInit {
         comments: 5,
         isLiked: false
       },
+      {
+        id: 2,
+        userName: 'hiro',
+        userAvatar: this.defaultAvatar,
+        timePosted: 'Just Now',
+        content: 'Hello world',
+        likes: 10,
+        comments: 100,
+        isLiked:  true
+      },
+      {
+        id: 3,
+        userName: '123',
+        userAvatar: this.defaultAvatar,
+        timePosted: '2024/10/29',
+        content: 'Cat is cute',
+        likes: 999,
+        comments: 100,
+        isLiked:  true
+      }
       // 可以添加更多貼文
     ];
   }
