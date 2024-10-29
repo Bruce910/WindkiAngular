@@ -9,6 +9,7 @@ import { HelpingComponent } from './modules/template/pages/helping/helping.compo
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { share } from 'rxjs';
 import { SharemodulesModule } from './sharemodules/sharemodules.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SharemodulesModule } from './sharemodules/sharemodules.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharemodulesModule
+    SharemodulesModule,
+    NgbModule
 
   ],
   providers: [

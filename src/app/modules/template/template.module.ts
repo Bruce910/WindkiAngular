@@ -22,7 +22,7 @@ const routes: Routes = [
     DetailComponent,
     IndexComponent,
     MainpageComponent,
-    HelpingComponent
+    // HelpingComponent
   ],
   imports: [
     RouterModule.forChild(routes),
