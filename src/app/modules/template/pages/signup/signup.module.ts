@@ -5,13 +5,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './index/signup.component';
 import { SharemodulesModule } from "../../../../sharemodules/sharemodules.module";
+import { PersonsignupComponent } from './personsignup/personsignup.component';
 
 const routes: Routes = [
-  { path: '', component: SignupComponent }
+  { path: '', component: SignupComponent },
+  { path: 'personsignup', component: PersonsignupComponent}
 ];
 @NgModule({
   declarations: [
-    SignupComponent
+    SignupComponent,
   ],
   imports: [
     RouterModule.forChild(routes),
