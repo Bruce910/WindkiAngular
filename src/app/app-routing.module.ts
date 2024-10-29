@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HelpingComponent } from './modules/template/pages/helping/helping.component';
 import { MainpageComponent } from './modules/template/pages/mainpage/mainpage.component';
-import { SocialComponent } from './modules/template/pages/Social/social/social.component';
+import { SocialComponent } from './modules/template/pages/Social/social/index/social.component';
 
 const routes: Routes = [
   {

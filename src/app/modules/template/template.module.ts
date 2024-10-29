@@ -6,7 +6,7 @@ import { DetailComponent } from './pages/detail/detail.component';
 import { MainpageComponent } from './pages/mainpage/mainpage.component';
 import { SharemodulesModule } from 'src/app/sharemodules/sharemodules.module';
 import { HelpingComponent } from './pages/helping/helping.component';
-import { SocialComponent } from './pages/Social/social/social.component';
+import { SocialComponent } from './pages/Social/social/index/social.component';
 import { FormsModule } from '@angular/forms';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
@@ -16,7 +16,7 @@ import { RippleModule } from 'primeng/ripple';
 import { AvatarModule } from 'primeng/avatar';
 import { InputTextModule } from 'primeng/inputtext';
 import { CarouselModule } from 'primeng/carousel';
-import { FinancialService } from './services/financial.service';
+import { FinancialService } from './pages/Social/services/financial.service';
 import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'h1', component: DetailComponent },
   { path: 'helping', component: HelpingComponent },
   { path: 'mainpage', component: MainpageComponent},
-  { path: 'social', component: SocialComponent}
+  { path: 'social', loadChildren: () => import('./pages/Social/social/social.module').then(m => m.SocialModule) }
 ];
 
 @NgModule({
@@ -32,27 +32,14 @@ const routes: Routes = [
     DetailComponent,
     IndexComponent,
     MainpageComponent,
-    HelpingComponent,
-    SocialComponent
+    HelpingComponent
   ],
   imports: [
     RouterModule.forChild(routes),
     SharemodulesModule,
-    CommonModule,
-    FormsModule,
-    CardModule,
-    ButtonModule,
-    BadgeModule,
-    RippleModule,
-    CardModule,
-    AvatarModule,
-    InputTextModule,
-    CarouselModule,
-    HttpClientModule,
     CommonModule
   ],
-  exports: [RouterModule, SocialComponent],
-  providers: [FinancialService],
+  exports: [RouterModule],
   bootstrap: [],
 })
 export class TemplateModule { }
