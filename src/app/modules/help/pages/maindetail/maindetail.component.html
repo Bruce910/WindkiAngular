@@ -1,0 +1,63 @@
+<div class="container-fluid">
+  <div class="sidebar">
+      <h2>類別</h2>
+      <button class="btn">生活幫助</button>
+      <button class="btn">技術支援</button>
+      <button class="btn">教育及學習</button>
+      <button class="btn">心理與情感</button>
+      <button class="btn">法律諮詢</button>
+      <button class="btn">健康與健身</button>
+      <button class="btn">社交活動</button>
+      <button class="btn">創意與藝術</button>
+      <button class="btn">義務與志願服務</button>
+
+  </div>
+
+  <div class="cards-container">
+      <div class="card"  onclick="handleCardClick('中正區', '王阿姨', '家庭清潔', 20)">
+          <h5>位於 中正區 的王阿姨</h5>
+          <p>勞動類 - 家庭清潔</p>
+          <p>內容：20點</p>
+      </div>
+      <div class="card" onclick="handleCardClick('大安區', '李先生', '水電維修', 15)">
+          <h5>位於 大安區 的李先生</h5>
+          <p>勞動類 - 水電維修</p>
+          <p>內容：15點</p>
+      </div>
+      <div class="card" onclick="handleCardClick('信義區', '陳小姐', '煮飯服務', 25)">
+          <h5>位於 信義區 的陳小姐</h5>
+          <p>勞動類 - 煮飯服務</p>
+          <p>內容：25點</p>
+      </div>
+      <div class="card" onclick="handleCardClick('信義區', '陳小姐', '煮飯服務', 25)">
+        <h5>位於 信義區 的陳小姐</h5>
+        <p>勞動類 - 煮飯服務</p>
+        <p>內容：25點</p>
+    </div>
+    <div class="card" onclick="handleCardClick('信義區', '陳小姐', '煮飯服務', 25)">
+      <h5>位於 信義區 的陳小姐</h5>
+      <p>勞動類 - 煮飯服務</p>
+      <p>內容：25點</p>
+  </div>
+  <div class="card" onclick="handleCardClick('信義區', '陳小姐', '煮飯服務', 25)">
+    <h5>位於 信義區 的陳小姐</h5>
+    <p>勞動類 - 煮飯服務</p>
+    <p>內容：25點</p>
+</div>
+  </div>
+
+  <div class="map-container">
+    <div *ngIf="!(apiLoaded | async)">載入地圖中...</div>
+    <google-map
+      *ngIf="apiLoaded | async"
+      [center]="center"
+      [options]="options"
+      height="500px"
+      width="100%">
+      <map-advanced-marker
+        [position]="markerPosition"
+        [title]="markerTitle">
+      </map-advanced-marker>
+    </google-map>
+  </div>
+</div>

@@ -6,24 +6,32 @@ import { MainComponent } from './pages/main/main.component';
 import { DetailComponent } from './pages/detail/detail.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
+import { MaindetailComponent } from './pages/maindetail/maindetail.component';
+import {
+  GoogleMapsModule,
+  MapInfoWindow,
+  MapMarker,
+} from '@angular/google-maps';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
-  { path: 'detail', component: DetailComponent }
+  { path: 'detail', component: DetailComponent },
+  { path: 'maindetail', component: MaindetailComponent }
 ];
 
 @NgModule({
   declarations: [
     MainComponent,
-    DetailComponent
+    DetailComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     RouterModule.forChild(routes),
     SharemodulesModule,
+    GoogleMapsModule,
     [NgbPaginationModule, NgbAlertModule]
+
   ],
   exports: [RouterModule],
   providers: [],

@@ -10,8 +10,8 @@ import { MainpageComponent } from './mainpage/mainpage.component';
 @NgModule({
   declarations:
   [
-    // WandkinavbarComponent,
-    // WandkifooterComponent,
+    WandkinavbarComponent,
+    WandkifooterComponent,
     // MainpageComponent
   ],
   imports: [
@@ -21,8 +21,8 @@ import { MainpageComponent } from './mainpage/mainpage.component';
 
   ],
   exports: [
-    // WandkinavbarComponent,
-    // WandkifooterComponent,
+    WandkinavbarComponent,
+    WandkifooterComponent,
     // MainpageComponent
 
   ]

@@ -43,27 +43,91 @@
     </section>
 
 <br>
-    <div>
+<br>
+    <!-- 添加container类来确保表单有适当的宽度和边距 -->
+<!-- <div class="container">
+  <h1 style="color: black;">在Wandki上幫助別人</h1>
+  <form style="color: black; padding: 20px;">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label> -->
+      <!-- 添加背景色和边框样式 -->
+      <!-- <input type="email"
+             class="form-control"
+             id="exampleInputEmail1"
+             style="background-color: white; border: 1px solid #ced4da;">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
 
-      <form>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password"
+             class="form-control"
+             id="exampleInputPassword1"
+             style="background-color: white; border: 1px solid #ced4da;">
+    </div>
 
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <div class="mb-3 form-check">
+      <input type="checkbox"
+             class="form-check-input"
+             id="exampleCheck1"
+             style="background-color: white;">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div> -->
+
+<!-- <div class="banner"> -->
+
+
+      <div class="container mt-2 mb-5 ">
+        <div class="row position-relative">
+          <!-- 左侧表单区域 -->
+          <div class="col-md-5 position-relative">
+            <div class="form-container">
+              <h2>在Wandki上幫助別人</h2>
+                <p>依照您的專長或定位來進行配對</p>
+              <form>
+                  <div >
+              <label for="location" class="form-label">位置</label>
+              <input type="text" placeholder="任何地方" class="form-control" id="location">
+          </div>
+          <div class="mb-3">
+            <label for="location" class="form-label">類別</label>
+            <select class="form-select" id="location">
+                <option selected>請選擇</option>
+                <option value="1">勞力</option>
+                <option value="2">腦力</option>
+                <option value="3">創意力</option>
+            </select>
         </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+          <div class="row mb-3">
+              <div class="col">
+                  <label for="checkin" class="form-label">開始日期</label>
+                  <input type="date" class="form-control" id="checkin">
+              </div>
+              <div class="col">
+                  <label for="checkout" class="form-label">結束日期</label>
+                  <input type="date" class="form-control" id="checkout">
+              </div>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-primary w-100"(click)="navigateToSearch()">搜尋</button>
       </form>
-      </div>
+    </div>
+  </div>
 
+
+  <div class="col-md-7 image-wrapper">
+      <div class="image-container">
+        <img src="assets/helping1/images/pichelp.jpg" alt="描述" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- </div>  -->
 <!-- Main -->
 <div id="main">
 

@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    WandkinavbarComponent,WandkifooterComponent,
+    // WandkinavbarComponent,WandkifooterComponent,
   ],
   imports: [
     CommonModule,
