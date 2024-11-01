@@ -19,8 +19,11 @@ export class LoginComponent implements OnInit {
   //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
   //Add 'implements OnInit' to the class.
   }
-  Login(){
-    this.router.navigateByUrl('');
+  login(){
+    this.loginService.JWTLogin(this.loginValue).subscribe((data: any) => {
+      console.log(data);
+    })
+    //this.router.navigateByUrl('');
   }
   closeForm(){
     this.logindisplay = 'none';

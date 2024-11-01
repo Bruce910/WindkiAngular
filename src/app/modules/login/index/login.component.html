@@ -8,7 +8,7 @@
       <label for="psw"><b>Password</b></label>
       <input type="password" [(ngModel)]="loginValue.Password" placeholder="Enter Password" name="psw" required>
 
-      <button type="submit" class="btn">Login</button>
+      <button type="submit" class="btn" (click)="login()">Login</button>
       <button type="button" class="btn cancel" (click)="closeForm()">Close</button>
     </div>
   </div>
