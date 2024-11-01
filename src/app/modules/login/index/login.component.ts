@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-logindisplay: string ='flex';
+logindisplay: string ='none';
   closeForm(){
     this.logindisplay = 'none';
   }
