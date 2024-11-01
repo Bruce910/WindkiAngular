@@ -12,7 +12,7 @@
         <a href="#" class="text-white"><small class="text-white mx-2">Privacy Policy</small>/</a>
         <a href="#" class="text-white"><small class="text-white mx-2">Terms of Use</small>/</a>
         <a href="#" class="text-white"><small class="text-white ms-2">Sales and Refunds</small></a>
-        <a class="text-white pointer" (click)="openForm()"><small class="text-white ms-2">登入</small></a>
+        <a class="text-white pointer" (click)="openChild()"><small class="text-white ms-2">登入</small></a>
         <a routerLink="/member/signup" class="text-white"><small class="text-white ms-2">註冊</small></a>
       </div>
     </div>
@@ -54,18 +54,3 @@
   </div>
 </div>
 <!-- Navbar End -->
-<button class="open-button" onclick="openForm()">Open Form</button>
-<div class="form-popup" id="myForm">
-    <form action="/action_page.php" class="form-container">
-      <h1>Login</h1>
-
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-
-      <button type="submit" class="btn">Login</button>
-      <button type="button" class="btn cancel" (click)="closeForm()">Close</button>
-    </form>
-  </div>
