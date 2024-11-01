@@ -17,7 +17,8 @@ import { LoginComponent } from '../modules/login/index/login.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    LoginComponent
 
 
   ],
