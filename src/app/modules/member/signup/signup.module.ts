@@ -18,7 +18,6 @@ const routes: Routes = [
   imports: [
     RouterModule.forChild(routes),
     CommonModule,
-    SharemodulesModule
 ],
 exports: [RouterModule, SignupComponent],
 providers: []

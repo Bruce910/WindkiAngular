@@ -40,7 +40,6 @@ const routes: Routes = [
     InputTextModule,
     CarouselModule,
     HttpClientModule,
-    SharemodulesModule
 ],
   exports: [RouterModule],
   providers: [FinancialService]

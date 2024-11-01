@@ -17,7 +17,6 @@ const routes: Routes = [
   ],
   imports: [
     RouterModule.forChild(routes),
-    SharemodulesModule,
     [NgbPaginationModule, NgbAlertModule]
   ],
   exports: [RouterModule],

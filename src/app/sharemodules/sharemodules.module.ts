@@ -3,7 +3,12 @@ import { CommonModule } from '@angular/common';
 import { WandkinavbarComponent } from './navbar/wandkinavbar/wandkinavbar.component';
 import { WandkifooterComponent } from './footer/wandkifooter/wandkifooter.component';
 import { RouterModule } from '@angular/router'
-import { LoginModule } from '../modules/login/login.module';
+
+import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './navbar/login/login.component';
+
+
+
 
 
 
@@ -12,16 +17,20 @@ import { LoginModule } from '../modules/login/login.module';
   [
     WandkinavbarComponent,
     WandkifooterComponent,
+    LoginComponent
+
     // MainpageComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    LoginModule
+    FormsModule
+
     ],
   exports: [
     WandkinavbarComponent,
     WandkifooterComponent,
+    LoginComponent
     // MainpageComponent
 
   ]

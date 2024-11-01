@@ -32,10 +32,6 @@ const routes: Routes = [
     path: 'member',
     loadChildren: () => import('./modules/member/member.module').then(m => m.MemberModule)
   },
-  {
-    path: 'login',
-    loadChildren: () => import('./modules/login/login.module').then(m => m.LoginModule)
-  }
 
 
 

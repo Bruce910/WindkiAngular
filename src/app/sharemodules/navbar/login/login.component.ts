@@ -1,9 +1,9 @@
-import { LoginPost } from './../../../services/login/interfaces/login.model';
-import { LoginService } from './../../../services/login/login.service';
+
 import { Router, Routes } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
+import { LoginPost } from 'src/app/services/login/interfaces/login.model';
+import { LoginService } from 'src/app/services/login/login.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
