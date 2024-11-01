@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-maindetail',
@@ -36,7 +37,9 @@ export class MaindetailComponent implements OnInit {
 
   markerTitle: string = "台北市中心";
 
-  constructor(httpClient: HttpClient) {
+  constructor(httpClient: HttpClient,
+    private router: Router
+  ) {
     this.apiLoaded = httpClient.jsonp('https://maps.googleapis.com/maps/api/js?key=AIzaSyAVCDcCRj_MRVQmZ9a2afJF8AM1MIdFmLc', 'callback')
         .pipe(
           map(() => true),
@@ -51,5 +54,10 @@ export class MaindetailComponent implements OnInit {
    handleCardClick(district: string, name: string, service: string, points: number) {
     console.log(`區域: ${district}, 姓名: ${name}, 服務: ${service}, 點數: ${points}`);
     // 這裡可以添加您的處理邏輯
+  }
+
+
+  navigateToSearch() {
+    this.router.navigate(['/help/makesure']);
   }
 }

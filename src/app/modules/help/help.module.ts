@@ -12,17 +12,24 @@ import {
   MapInfoWindow,
   MapMarker,
 } from '@angular/google-maps';
+import { MakesureComponent } from './pages/makesure/makesure.component';
+import { DoneoneComponent } from './pages/doneone/doneone.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
+  { path: 'main', component: MainComponent },
   { path: 'detail', component: DetailComponent },
-  { path: 'maindetail', component: MaindetailComponent }
+  { path: 'maindetail', component: MaindetailComponent },
+  { path: 'makesure', component: MakesureComponent },
+  { path: 'doneone', component: DoneoneComponent }
 ];
 
 @NgModule({
   declarations: [
     MainComponent,
     DetailComponent,
+    MakesureComponent,
+    DoneoneComponent,
   ],
   imports: [
     CommonModule,
