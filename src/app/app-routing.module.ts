@@ -28,6 +28,15 @@ const routes: Routes = [
     path: 'social',
     loadChildren: () => import('./modules/social/social.module').then(m => m.SocialModule)
   },
+  {
+    path: 'member',
+    loadChildren: () => import('./modules/member/member.module').then(m => m.MemberModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./modules/login/login.module').then(m => m.LoginModule)
+  }
+
 
 
 

@@ -4,6 +4,7 @@ import { WandkinavbarComponent } from './navbar/wandkinavbar/wandkinavbar.compon
 import { WandkifooterComponent } from './footer/wandkifooter/wandkifooter.component';
 import { RouterModule } from '@angular/router'
 import { MainpageComponent } from './mainpage/mainpage.component';
+import { LoginComponent } from '../modules/login/index/login.component';
 
 
 

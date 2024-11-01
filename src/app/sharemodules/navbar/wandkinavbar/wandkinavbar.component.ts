@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { LoginComponent } from 'src/app/modules/login/index/login.component';
 
 @Component({
   selector: 'app-wandkinavbar',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./wandkinavbar.component.css']
 })
 export class WandkinavbarComponent {
-
+  @ViewChild(LoginComponent) loginComponent!: LoginComponent;
+  openChild(){
+    this.loginComponent.openForm();
+  }
 }

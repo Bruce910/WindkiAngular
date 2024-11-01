@@ -13,6 +13,7 @@ import { share } from 'rxjs';
 import { SharemodulesModule } from './sharemodules/sharemodules.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './modules/login/index/login.component';
 
 @NgModule({
   declarations: [
