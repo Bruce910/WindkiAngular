@@ -1,0 +1,78 @@
+.form-popup {
+  z-index: 1000;
+  display: flex; /* 使用 Flexbox */
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+}
+
+.form-container {
+  background-color: rgb(237, 240, 197);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 90%; /* 設置為90%以適應小螢幕 */
+  max-width: 400px; /* 最大寬度 */
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+.form-container>label>b{
+  color: #333;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+.cancel {
+  background-color: #f44336;
+}
+
+.cancel:hover {
+  background-color: #e53935;
+}
+.pointer {cursor: pointer;}
