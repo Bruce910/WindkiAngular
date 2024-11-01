@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { LoginComponent } from 'src/app/modules/login/index/login.component';
+import { LoginComponent } from '../../login/login/login.component';
+
 
 @Component({
   selector: 'app-wandkinavbar',
